@@ -48,7 +48,7 @@
   <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="img/favicon/favicon-128.png" sizes="128x128">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
   <meta name="application-name" content="Moz Hack 3">
   <meta name="msapplication-TileColor" content="#FFFFFF">
   <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png">
@@ -103,11 +103,11 @@
     </div>
     <div class="navbar-menu" id="navMenu">
       <div class="navbar-end">
-        <a class="navbar-item" href="index.html#">Home</a>
-        <a class="navbar-item" href="index.html#about">About</a>
-        <a class="navbar-item" href="index.html#faqs">FAQs</a>
-        <a class="navbar-item" href="index.html#sponsors">Sponsors</a>
-        <a class="navbar-item" href="index.html#team">Team</a>
+        <a class="navbar-item smooth-scroll" href="index.html#home">Home</a>
+        <a class="navbar-item smooth-scroll" href="index.html#about">About</a>
+        <a class="navbar-item smooth-scroll" href="index.html#faqs">FAQs</a>
+        <a class="navbar-item smooth-scroll" href="index.html#sponsors">Sponsors</a>
+        <a class="navbar-item smooth-scroll" href="index.html#team">Team</a>
         <div class="navbar-item">
           <a class="button is-primary is-rounded" href="https://goo.gl/forms/TepRbN5IihtnoFct1" target="_blank">Volunteer</a>
         </div>
@@ -133,7 +133,7 @@
     });
   </script>
 
-  <section class="section header">
+  <section class="section header" id="home">
     <div class="background-wrapper">
       <div class="animated-background"></div>
       <div class="letters">
@@ -548,6 +548,17 @@
       respondTo: 'slider',
       draggable: false
     });
+
+    $(".smooth-scroll").click(function (event) {
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+          var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top - 70
+      }, 800);
+    }
+  });// End if
   </script>
 </body>
 
